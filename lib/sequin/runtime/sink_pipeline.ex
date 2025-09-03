@@ -429,6 +429,7 @@ defmodule Sequin.Runtime.SinkPipeline do
       :typesense -> Sequin.Runtime.TypesensePipeline
       :meilisearch -> Sequin.Runtime.MeilisearchPipeline
       :sns -> Sequin.Runtime.SnsPipeline
+      :duckdb -> Sequin.Runtime.DuckdbPipeline
     end
   end
 

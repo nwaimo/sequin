@@ -11,6 +11,7 @@ defmodule Sequin.Consumers.SinkConsumer do
   alias Sequin.Consumers
   alias Sequin.Consumers.AzureEventHubSink
   alias Sequin.Consumers.Backfill
+  alias Sequin.Consumers.DuckdbSink
   alias Sequin.Consumers.ElasticsearchSink
   alias Sequin.Consumers.Function
   alias Sequin.Consumers.GcpPubsubSink
@@ -51,7 +52,8 @@ defmodule Sequin.Consumers.SinkConsumer do
     :typesense,
     :meilisearch,
     :sns,
-    :elasticsearch
+    :elasticsearch,
+    :duckdb
   ]
 
   # This is a module attribute to compile the types into the schema
@@ -136,7 +138,8 @@ defmodule Sequin.Consumers.SinkConsumer do
         azure_event_hub: AzureEventHubSink,
         typesense: TypesenseSink,
         meilisearch: MeilisearchSink,
-        elasticsearch: ElasticsearchSink
+        elasticsearch: ElasticsearchSink,
+        duckdb: DuckdbSink
       ],
       on_replace: :update,
       type_field_name: :type
